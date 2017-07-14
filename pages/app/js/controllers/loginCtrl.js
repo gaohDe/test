@@ -1,12 +1,10 @@
 /**
  * Created by gaohuan on 2017/5/29.
  */
-app.controller("loginCtrl",  function ($scope) {
-    console.log("dfsfsdf");
+app.controller("loginCtrl", ["$state","$scope",function ($state,$scope) {
     var contentHeight = $(window).height();
     $("#login").height(contentHeight);
-    console.log(contentHeight);
     $scope.submit = function(){
-        $state.go('app.ggg');
+        $state.go('app.processAnalysis');
     };
-});
+}]);

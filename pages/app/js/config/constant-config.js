@@ -3,6 +3,6 @@
  */
 app.constant('APP_REQUIRES', {
     scripts: {
-        'app': ['pages/app/js/controllers/loginCtrl.js']
+        'login': ['pages/app/js/controllers/loginCtrl.js']
     }
 });

@@ -7,19 +7,34 @@ app.config(['$stateProvider', '$urlRouterProvider', 'RouterHelperProvider', func
     $stateProvider
         .state('login', {
             url: '/login',
-            title: 'login',
-            controller:"loginCtrl",
-            templateUrl: helper.basePath('partials/login.html')
+            title: 'Login View',
+            controller:'loginCtrl',
+            resolve:helper.resolveFor('login'),
+            templateUrl: helper.basePath('login.html')
         })
         .state('app', {
             url: '/app',
-            title: 'app',
-            templateUrl: helper.basePath('partials/app.html')
+            abstract: true,
+            templateUrl: helper.basePath('app.html')
         })
-        .state('app.ggg', {
-            url: '/ggg',
-            title: 'ggg',
-            templateUrl: helper.basePath('partials/ggg.html'),
-            resolve:helper.resolveFor('app')
+        .state('app.processAnalysis', {
+            url: '/processAnalysis',
+            title: 'processAnalysis View',
+            templateUrl: helper.basePath('processAnalysis.html')
         })
+        .state('app.softwareAnalysis', {
+            url: '/softwareAnalysis',
+            title: 'softwareAnalysis',
+            templateUrl: helper.basePath('softwareAnalysis.html')
+        })
+        .state('app.dataBase', {
+            url: '/dataBase',
+            title: 'dataBase',
+            templateUrl: helper.basePath('dataBase.html')
+        })
+        .state('app.analysisResult', {
+            url: '/analysisResult',
+            title: 'analysisResult',
+            templateUrl: helper.basePath('analysisResult.html')
+        });
 }]);
